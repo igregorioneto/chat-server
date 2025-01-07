@@ -27,3 +27,31 @@
 - Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço do Usuário
 - .dockerignore: Lista arquivos e diretórios  a serem excluídos do contexto da compilação do Docker.
 - .env: Armazena variáveis de ambiente
+
+## Message Service
+### É responsável por lidar com o:
+- Comunicação em tempo real com os usuários
+- Promover uma experiência de usuário dinâmica e interativa
+
+### Descrição das pastas:
+- message-service: Pasta principal do serviço de Mensagens
+- src: Contém o código fonte do serviço de Mensagens
+- config: Arquivos de configuração do Chat, como variáveis de ambiente.
+- controllers: Lida com a lógica de negócio para lidar com mensagens no `MessageController.ts`
+- services: Mantém o serviço do `RabbitMQService` e lida com as interações com o `RabbitMQ`.
+- database:
+    - models: Modelo do Mongoose, neste caso do Message
+    - connection.ts: Gerencia a conexão com o Banco de Dados
+    - index.ts: Ponto de entrada para a funcionalidade do Banco de Dados
+- middleware:
+    - index.ts: Ponto de entrada de funcionalidades do middleware
+- routes:
+    - messageRoutes.ts: Rotas do Express correspondente as operações das mensagens
+- utils:
+    - index.ts: Funções utilitárias
+        - ex.: Manipulador de Erros Personalizado, Funções relacionadas a senhas, rastrear status do usuário...
+- app.ts: Ponto de entrada do aplicativo
+- server.ts: Ponto de entrada de funções do Express.
+- Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço do Usuário
+- .dockerignore: Lista arquivos e diretórios  a serem excluídos do contexto da compilação do Docker.
+- .env: Armazena variáveis de ambiente
