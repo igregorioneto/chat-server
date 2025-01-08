@@ -83,3 +83,13 @@
 - Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço do Notificação
 - .dockerignore: Lista arquivos e diretórios  a serem excluídos do contexto da compilação do Docker.
 - .env: Armazena variáveis de ambiente
+
+## API Gateway
+### É responsável por lidar com o:
+- Conectar todas as portas dos Microsserviços a um API Gateway
+- Responsável por rotear solicitações HTTP recebidas para os microsserviços apropriados
+    com base no caminho da solicitação.
+
+### Descrição das pastas:
+- gateway: Pasta principal do serviço de Gateway
+- index.ts: Express para servir como a API Gateway
