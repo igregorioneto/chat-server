@@ -93,3 +93,12 @@
 ### Descrição das pastas:
 - gateway: Pasta principal do serviço de Gateway
 - index.ts: Express para servir como a API Gateway
+
+## NGINX
+### É responsável por lidar com o:
+- Serve como proxy reverso para rotear solicitações para os microsserviços apropriados com base
+    no caminho da URL.
+
+### Descrição das pastas:
+- nginx: Pasta principal do nginx
+- nginx.conf: Configuração do nginx
