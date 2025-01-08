@@ -1,16 +1,16 @@
-export class UserStateStore {
-    private static instance: UserStateStore;
+export class UserStatusStore {
+    private static instance: UserStatusStore;
     private userStatuses: Record<string, boolean>;
 
     constructor() {
         this.userStatuses = {};
     }
 
-    public static getInstance(): UserStateStore {
-        if (!UserStateStore.instance) {
-            UserStateStore.instance = new UserStateStore();
+    public static getInstance(): UserStatusStore {
+        if (!UserStatusStore.instance) {
+            UserStatusStore.instance = new UserStatusStore();
         }
-        return UserStateStore.instance;
+        return UserStatusStore.instance;
     }
     
     setUserOnline(userId: string) {
