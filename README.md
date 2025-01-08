@@ -52,6 +52,34 @@
         - ex.: Manipulador de Erros Personalizado, Funções relacionadas a senhas, rastrear status do usuário...
 - app.ts: Ponto de entrada do aplicativo
 - server.ts: Ponto de entrada de funções do Express.
-- Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço do Usuário
+- Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço de Mensagens
+- .dockerignore: Lista arquivos e diretórios  a serem excluídos do contexto da compilação do Docker.
+- .env: Armazena variáveis de ambiente
+
+## Notification Service
+### É responsável por lidar com o:
+- Notificações em tempo real para os usuários do serviço de bate-papo
+
+### Descrição das pastas:
+- notification-service: Pasta principal do serviço de Notificações
+- src: Contém o código fonte do serviço de Notificações
+- config: Arquivos de configuração de Notificações e detalhes de conexãoc om RabbitMQ.
+- services: 
+    - RabbitMQService.ts: Implementa o serviço RabbitMQ, que lida com o enfileiramento de mensagens
+        e comunicação com outros microsserviços.
+    - EmailService.ts: Define o serviço de e-mail, responsável por enviar notificações por e-mail.
+    - FCMService.ts: Contém a implementação do serviço Firebase Cloud Messaging, notificações push
+        para dispositivos móveis.
+    - index.ts: Exporta todos os módulos dos serviços.
+- middleware:
+    - index.ts: Middlewares usadas no Serviço de Notificação, tais como:
+        - Autenticação
+        - Tratamento de erros
+- utils:
+    - index.ts: Exporta as funções utilitárias.
+    - apiError.ts: Define a classe `ApiError`, objetos de erro personalizados usados em todo o aplicativo.
+    - userStatusStore.ts: Gerencia o status `online` e `offline` dos usuários.
+- server.ts: Ponto de entrada de funções do Express.
+- Dockerfile: Especifica as instruções do Docker para conteinerizar o Serviço do Notificação
 - .dockerignore: Lista arquivos e diretórios  a serem excluídos do contexto da compilação do Docker.
 - .env: Armazena variáveis de ambiente
