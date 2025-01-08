@@ -1,4 +1,4 @@
-import { UserStateStore } from "./userStatusStore";
+import { UserStatusStore } from "./userStatusStore";
 import { ApiError } from "./apiError";
 
-export { UserStateStore, ApiError };
+export { UserStatusStore, ApiError };
