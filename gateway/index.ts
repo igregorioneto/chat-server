@@ -1,6 +1,6 @@
 import express from "express";
 import proxy from "express-http-proxy";
-import config from "./config/config";
+import config from "./src/config/config";
 
 const app = express();
 app.use(express.json());
